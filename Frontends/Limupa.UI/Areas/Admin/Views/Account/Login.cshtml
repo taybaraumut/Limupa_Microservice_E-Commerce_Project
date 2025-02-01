@@ -1,0 +1,46 @@
+﻿@using Limupa.DtoLayer.AccountDtos
+@model AccountLoginDto
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Areas/Admin/Views/_AdminLayout/_SigninLayout.cshtml";
+}
+
+<div class="account-content">
+    <div class="login-wrapper">
+        <div class="login-content">
+            <div class="login-userset">
+                <div class="login-logo">
+                    <img src="~/Limupa/images/menu/logo/1.jpg" alt="img">
+                </div>
+                <div class="login-userheading">
+                    <h3>Limupa Admin Giriş Paneli</h3>
+                </div>
+                <form method="post">
+                    <div class="form-login">
+                        <label>Admin Email Adresi</label>
+                        <div class="form-addons">
+                            <input type="text" asp-for="Username" placeholder="Admin Kullanıcı Adını Buraya Giriniz">
+                            <img src="~/inventory-management-admin-dashboard-template-main/assets/img/icons/mail.svg" alt="img">
+                        </div>
+                    </div>
+                    <div class="form-login">
+                        <label>Admin Şifresi</label>
+                        <div class="pass-group">
+                            <input type="password" asp-for="Password" class="pass-input" placeholder="Admin Şifresini Buraya Giriniz">
+                            <span class="fas toggle-password fa-eye-slash"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-login">
+                        <input class="btn btn-login" type="submit" value="Giriş Yap" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="login-img">
+            <img src="~/inventory-management-admin-dashboard-template-main/assets/img/login.jpg" alt="img">
+        </div>
+    </div>
+</div>
+

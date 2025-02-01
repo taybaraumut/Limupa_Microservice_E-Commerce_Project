@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var code = ViewData["Code"];
+    var discountRate = ViewData["DiscountRate"];
+}
+
+<div class="Shopping-cart-area pt-60 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                    <div class="table-content table-responsive">
+                    @await Component.InvokeAsync("ShoppingCartProductListComponentPartial")
+                    </div>
+
+                @await Component.InvokeAsync("ShoppingCartPriceAndDiscountCodeComponentPartial",new{code = code,discountRate = discountRate})
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,6 @@
+@Limupa.Cargo.Api_HostAddress = http://localhost:5094
+
+GET {{Limupa.Cargo.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

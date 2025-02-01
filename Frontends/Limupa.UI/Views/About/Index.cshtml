@@ -1,0 +1,114 @@
+﻿@using Limupa.DtoLayer.AboutDtos
+@model List<ResultAboutDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="about-us-wrapper pt-60 pb-40">
+    <div class="container">
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-6 order-last order-lg-first">
+                    <div class="about-text-wrap">
+                        <h2><span>Hakkımızda</span>Limupa Kimdir?</h2>
+                        <p>
+                            @item.AboutDescription
+                        </p>
+                    </div>
+                </div>
+            }
+            
+
+            <div class="col-lg-5 col-md-10">
+                <div class="about-image-wrap">
+                    <img class="img-full" src="~/Limupa/images/product/large-size/13.jpg" alt="About Us" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="counterup-area">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-lg-3 col-md-6">
+                <!-- Begin Limupa Counter Area -->
+                <div class="limupa-counter white-smoke-bg">
+                    <div class="container">
+                        <div class="counter-img">
+                            <img src="~/Limupa/images/about-us/icon/1.png" alt="">
+                        </div>
+                        <div class="counter-info">
+                            <div class="counter-number">
+                                <h3 class="counter">100000</h3>
+                            </div>
+                            <div class="counter-text">
+                                <span>Mutlu Müşteri</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- limupa Counter Area End Here -->
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <!-- Begin limupa Counter Area -->
+                <div class="limupa-counter gray-bg">
+                    <div class="counter-img">
+                        <img src="~/Limupa/images/about-us/icon/2.png" alt="">
+                    </div>
+                    <div class="counter-info">
+                        <div class="counter-number">
+                            <h3 class="counter">1000</h3>
+                        </div>
+                        <div class="counter-text">
+                            <span>1nci Kalite Ürünler</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- limupa Counter Area End Here -->
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <!-- Begin limupa Counter Area -->
+                <div class="limupa-counter white-smoke-bg">
+                    <div class="counter-img">
+                        <img src="~/Limupa/images/about-us/icon/3.png" alt="">
+                    </div>
+                    <div class="counter-info">
+                        <div class="counter-number">
+                            <h3 class="counter">150000</h3>
+                        </div>
+                        <div class="counter-text">
+                            <span>Hızlı Teslimat</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- limupa Counter Area End Here -->
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <!-- Begin limupa Counter Area -->
+                <div class="limupa-counter gray-bg">
+                    <div class="counter-img">
+                        <img src="~/Limupa/images/about-us/icon/4.png" alt="">
+                    </div>
+                    <div class="counter-info">
+                        <div class="counter-number">
+                            <h3 class="counter">400000</h3>
+                        </div>
+                        <div class="counter-text">
+                            <span>Başarılı Satışlar</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- limupa Counter Area End Here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

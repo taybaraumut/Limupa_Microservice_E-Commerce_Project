@@ -1,0 +1,45 @@
+﻿@if (TempData["id_four"] != "")
+{
+    @using Limupa.DtoLayer.BasketDtos
+    @model List<BasketItemDto>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="li-product-remove">remove</th>
+                <th class="li-product-thumbnail">images</th>
+                <th class="cart-product-name">Product</th>
+                <th class="li-product-price">Unit Price</th>
+                <th class="li-product-quantity">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="li-product-remove"><a href="/ShoppingCart/RemoveBasketItem/@item.ProductUrlSeo"><i class="fa fa-times"></i></a></td>
+                    <td class="li-product-thumbnail"><img src="@item.ProductImageUrl" style="width:80px; height:80px;"></td>
+                    <td class="li-product-name"><a href="#">@item.ProductName</a></td>
+                    <td class="li-product-price"><span class="amount">@item.Price ₺</span></td>
+                    <td class="quantity">
+                        <label>Quantity</label>
+                        <div class="cart-plus-minus">
+                            <input class="cart-plus-minus-box" value="@item.Quantity" type="text">
+                            <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                            <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <table class="table">
+        <tbody>
+            <h2 class="text-center">Sepeti Görmek için Lütfen Giriş Yapınız</h2>
+        </tbody>
+    </table>
+}
+

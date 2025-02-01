@@ -1,0 +1,25 @@
+﻿@using Limupa.DtoLayer.BasketDtos
+@model List<BasketItemDto>
+
+
+<h3>Sipariş Detayları</h3>
+<div class="your-order-table table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="cart-product-name">Ürün</th>
+                <th class="cart-product-total">Ürün Fiyat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="cart_item">
+                    <td class="cart-product-name">@item.ProductName<strong class="product-quantity"> × @item.Quantity</strong></td>
+                    <td class="cart-product-total"><span class="amount">@item.Price ₺</span></td>
+                </tr>
+            }
+        </tbody>
+        @await Component.InvokeAsync("OrderSummaryTotalPriceComponentPartial")
+    </table>
+</div>

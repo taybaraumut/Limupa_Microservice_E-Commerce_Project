@@ -1,0 +1,60 @@
+﻿@using Limupa.DtoLayer.AccountDtos
+@model AccountRegisterDto
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>@ViewBag.InternalServer</h1>
+
+<div class="page-section mb-60">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12 mt-10 mt-auto">
+                <form method="post">
+                    <div class="login-form">
+                        <h4 class="login-title">Üye Ol</h4>
+                        <div class="row">
+                            <div class="col-md-6 col-12 mb-20">
+                                <label>Ad</label>
+                                <input class="mb-0" type="text" asp-for="Name" placeholder="Adınızı Giriniz">
+                            </div>
+                            <div class="col-md-6 col-12 mb-20">
+                                <label>Soyad</label>
+                                <input class="mb-0" type="text" asp-for="Surname" placeholder="Soyadınızı Giriniz">
+                            </div>
+                            <div class="col-md-12 col-12 mb-20">
+                                <label>Kullanıcı Adı</label>
+                                <input class="mb-0" type="text" asp-for="Username" placeholder="Kullanıcı Adınızı Giriniz">
+                            </div>
+                            <div class="col-md-12 mb-20">
+                                <label>E-Mail</label>
+                                <input class="mb-0" type="email" asp-for="Email" placeholder="E-Mail Adresinizi Giriniz">
+                            </div>                            
+                            <div class="col-md-6 mb-20">
+                                <label>Şifre</label>
+                                <input  class="mb-0" type="password" asp-for="Password" placeholder="Şifrenizi Giriniz">
+                            </div>
+                            <div class="col-md-6 mb-20">
+                                <label>Şifre Tekrar</label>
+                                <input class="mb-0" type="password" asp-for="ConfirmPassword" placeholder="Tekrar Şifrenizi Giriniz">
+                            </div>
+                            <div class="col-12">
+                                <button class="register-button mt-0" type="submit">Üye Ol</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

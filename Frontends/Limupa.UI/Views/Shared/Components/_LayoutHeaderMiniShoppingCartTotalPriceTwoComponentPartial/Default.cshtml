@@ -1,0 +1,41 @@
+﻿
+
+@if (TempData["id_three"] != "")
+{
+    @using Limupa.DtoLayer.BasketDtos
+    @model BasketTotalDto
+
+    @if (Model.TotalPrice == 0)
+    {
+        <div class="hm-minicart-trigger">
+            <span class="item-icon"></span>
+            <span class="item-text">
+                0 ₺
+                <span class="cart-item-count">0</span>
+            </span>
+        </div>
+    }
+    else
+    {
+        <div class="hm-minicart-trigger">
+            <span class="item-icon"></span>
+            <span class="item-text">
+                @Model.TotalPrice ₺
+                <span class="cart-item-count">@Model.BasketItems.Count</span>
+            </span>
+        </div>
+    }
+}
+else
+{
+    <div class="hm-minicart-trigger">
+        <span class="item-icon"></span>
+        <span class="item-text">
+            Giriş Yapınız
+        </span>
+    </div>
+}
+
+
+
+

@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="page-section mb-60">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12 mt-10 mt-auto">
+                <form method="post">
+                    <div class="login-form">
+                        <h4 class="login-title">Üye Ol</h4>
+                        <div class="row">
+                            <div class="col-md-12 col-12 mb-20">
+                                <label>Kullanıcı Adı</label>
+                                <input class="mb-0" type="text" name="Username" placeholder="Kullanıcı Adınızı Giriniz">
+                            </div>
+
+                            <div class="col-md-6 mb-20">
+                                <label>Şifre</label>
+                                <input class="mb-0" type="password" name="Password" placeholder="Şifrenizi Giriniz">
+                            </div>
+
+                            <div class="col-md-12 col-12 mb-20">
+                                <h5 style="text-align:center;color:red;">@ViewBag.account_error</h5>
+                            </div>
+                            
+                            <div class="col-12">
+                                <button class="register-button mt-0" type="submit">Giriş Yap</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+

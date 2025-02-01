@@ -1,0 +1,138 @@
+﻿@using Limupa.DtoLayer.CargoDtos.CargoCompanyDtos
+@model List<ResultCargoCompanyDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/_AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content">
+        <div class="page-header">
+            <div class="page-title">
+                <h4>Kargo Firma Listesi</h4>
+                <h6>Kargo Firması İle İlgili İşlemleri Aşağıdan Gerçekleştirebilirsiniz</h6>
+            </div>
+            <div class="page-btn">
+                <a asp-area="Admin" asp-controller="CargoCompany" asp-action="CreateCargoCompany" class="btn btn-added">
+                    <img src="~/inventory-management-admin-dashboard-template-main/assets/img/icons/plus.svg" class="me-1" alt="img">Kargo Firması Ekle
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="table-top">
+                    <div class="search-set">
+                        <div class="search-path">
+                            <a class="btn btn-filter" id="filter_search">
+                                <img src="~/inventory-management-admin-dashboard-template-main/assets/img/icons/filter.svg" alt="img">
+                                <span><img src="~/inventory-management-admin-dashboard-template-main/assets/img/icons/closes.svg" alt="img"></span>
+                            </a>
+                        </div>
+                        <div class="search-input">
+                            <a class="btn btn-searchset"><img src="~/inventory-management-admin-dashboard-template-main/assets/img/icons/search-white.svg" alt="img"></a>
+                        </div>
+                    </div>
+                    <div class="wordset">
+                        <ul>
+                            <li>
+                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img src="~/inventory-management-admin-dashboard-template-main/assets/img/icons/pdf.svg" alt="img"></a>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img src="~/inventory-management-admin-dashboard-template-main/assets/img/icons/excel.svg" alt="img"></a>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img src="~/inventory-management-admin-dashboard-template-main/assets/img/icons/printer.svg" alt="img"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" id="filter_inputs">
+                    <div class="card-body pb-0">
+                        <div class="row">
+                            <div class="col-lg-2 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <select class="select">
+                                        <option>Choose Category</option>
+                                        <option>Computers</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <select class="select">
+                                        <option>Choose Sub Category</option>
+                                        <option>Fruits</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <select class="select">
+                                        <option>Choose Sub Brand</option>
+                                        <option>Iphone</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-sm-6 col-12 ms-auto">
+                                <div class="form-group">
+                                    <a class="btn btn-filters ms-auto"><img src="~/inventory-management-admin-dashboard-template-main/assets/img/icons/search-whites.svg" alt="img"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label class="checkboxs">
+                                        <input type="checkbox" id="select-all">
+                                        <span class="checkmarks"></span>
+                                    </label>
+                                </th>
+                                <th>Kargo Firma Adı</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <label class="checkboxs">
+                                            <input type="checkbox">
+                                            <span class="checkmarks"></span>
+                                        </label>
+                                    </td>
+                                    <td class="productimgname">
+                                        <a href="javascript:void(0);" class="product-img">
+                                            <img src="~/inventory-management-admin-dashboard-template-main/assets/img/product/noimage.png" alt="product">
+                                        </a>
+                                        <a href="javascript:void(0);">@item.CargoCompanyName</a>
+                                    </td>                                  
+                                    <td>
+                                        <a class="me-3" asp-area="Admin" asp-controller="CargoCompany" asp-action="UpdateCargoCompany" asp-route-id="@item.CargoCompanyID">
+                                            <img src="~/inventory-management-admin-dashboard-template-main/assets/img/icons/edit.svg" alt="img">
+                                        </a>
+                                        <a class="me-3 confirm-text" asp-area="Admin" asp-controller="CargoCompany" asp-action="DeleteCargoCompany" asp-route-id="@item.CargoCompanyID">
+                                            <img src="~/inventory-management-admin-dashboard-template-main/assets/img/icons/delete.svg" alt="img">
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,94 @@
+﻿@model List<ResultUserCommentByProductIdDto>
+
+<div class="product-reviews">
+    <div class="product-details-comment-block">
+        @foreach (var item in Model)
+        {
+            switch (item.UserCommentRating)
+            {
+                case 1:
+                    {
+                        <div class="comment-review">
+                            <span>Grade</span>
+                            <ul class="rating">
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                        </div>
+                    }
+                    break;
+                case 2:
+                    {
+                        <div class="comment-review">
+                            <span>Grade</span>
+                            <ul class="rating">
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                        </div>
+                    }
+
+                    break;
+                case 3:
+                    {
+                        <div class="comment-review">
+                            <span>Grade</span>
+                            <ul class="rating">
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                        </div>
+                    }
+                    break;
+                case 4:
+                    {
+                        <div class="comment-review">
+                            <span>Grade</span>
+                            <ul class="rating">
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li class="no-star"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                        </div>
+                    }
+                    break;
+                case 5:
+                    {
+                        <div class="comment-review">
+                            <span>Grade</span>
+                            <ul class="rating">
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                                <li><i class="fa fa-star-o"></i></li>
+                            </ul>
+                        </div>
+                    }
+                    break;
+            }
+
+            <div class="comment-author-infos pt-25">
+                <span>@item.UserCommentName - @item.UserCommentSurname</span>
+                <em>@item.UserCommentCreatedDate.ToShortDateString()</em>
+            </div>
+            <div class="comment-details">
+                <h4 class="title-block">Demo</h4>
+                <p>Plaza</p>
+            </div>
+        }
+
+       @await Html.PartialAsync("~/Views/ProductDetail/CreateUserComment.cshtml",new {id = ViewBag.x})
+    </div>
+</div>

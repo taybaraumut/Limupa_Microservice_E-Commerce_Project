@@ -1,0 +1,23 @@
+﻿@using Limupa.DtoLayer.BasketDtos
+@model BasketTotalDto
+
+<div class="row">
+    <div class="col-md-5 ml-auto">
+        <div class="cart-page-total">
+            @if (TempData["id"] != "")
+            {
+                <h2>Sepet Toplamı</h2>
+                <ul>
+                    <li>Toplam Ürün Fiyatı Fiyatı<span>@Model.TotalPrice ₺</span></li>
+                    <li>İndirim Oranı<span>@TempData["discountRate"] %</span></li>
+                    <li>İndirim Kodu<span>@TempData["code"] </span></li>
+                    <li>Kdv Tutarı<span>@ViewBag.totalPriceWithTax ₺</span></li>
+                    <li>Toplam Fiyat<span>@ViewBag.Total ₺</span></li>
+                    <li>İndirimli Güncel Fiyat<span>@ViewBag.totalNewPriceWithDiscount ₺</span></li>
+
+                </ul>
+                <a href="#">Proceed to checkout</a>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,137 @@
+﻿
+<div class="col-lg-3 order-2 order-lg-1">
+    <!--sidebar-categores-box start  -->
+    <form id="myForm" asp-controller="ProductMemoryCardList" asp-action="Index" method="get">
+
+        <div class="sidebar-categores-box">
+            <div class="sidebar-title t-center">
+                <h2>Filtrele</h2>
+            </div>
+            <!-- btn-clear-all start -->
+            @* <button class="btn-clear-all mb-sm-30 mb-xs-30">Clear all</button> *@
+            <!-- btn-clear-all end -->
+            <!-- filter-sub-area start -->
+            <div class="filter-sub-area">
+                <h5 class="filter-sub-titel">Markalar</h5>
+                <div class="categori-checkbox">
+                    <ul>
+                        <li><input type="checkbox" value="adata" id="product_name_one" name="productName"><a href="#">AData (13)</a></li>
+                        <li><input type="checkbox" value="kingston" id="product_name_two" name="productName"><a href="#">Kingston (12)</a></li>
+                        <li><input type="checkbox" value="lexar" id="product_name_three" name="productName"><a href="#">Lexar (12)</a></li>
+                        <li><input type="checkbox" value="samsung" id="product_name_four" name="productName"><a href="#">Samsung (12)</a></li>
+                        <li><input type="checkbox" value="sandisk" id="product_name_five" name="productName"><a href="#">Sandisk (12)</a></li>
+                        <li><input type="checkbox" value="verbatım" id="product_name_six" name="productName"><a href="#">Verbatım (12)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- filter-sub-area end -->
+            <!-- filter-sub-area start -->
+            <div class="filter-sub-area pt-sm-10 pt-xs-10">
+                <h5 class="filter-sub-titel">Hafıza Kartı</h5>
+                <div class="categori-checkbox">
+                    <ul>
+                        <li><input type="checkbox" value="micro sd" id="product_model_one" name="productModel"><a href="#">Micro SD (10)</a></li>
+                        <li><input type="checkbox" value="sdhc" id="product_model_two" name="productModel"><a href="#">SDHC (10)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- filter-sub-area end -->
+            <!-- filter-sub-area start -->
+            <div class="filter-sub-area pt-sm-10 pt-xs-10">
+                <h5 class="filter-sub-titel">Kapasite</h5>
+                <div class="categori-checkbox">
+                    <ul>
+                        <li><input type="checkbox" value="32 gb" id="product_storage_one" name="productStorage"><a href="#">32GB (10)</a></li>
+                        <li><input type="checkbox" value="64 gb" id="product_storage_two" name="productStorage"><a href="#">64GB (10)</a></li>
+                        <li><input type="checkbox" value="128 gb" id="product_storage_three" name="productStorage"><a href="#">128GB (10)</a></li>
+                        <li><input type="checkbox" value="256 gb" id="product_storage_four" name="productStorage"><a href="#">256GB (10)</a></li>
+                        <li><input type="checkbox" value="512 gb" id="product_storage_five" name="productStorage"><a href="#">512GB (10)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="filter-sub-area">
+                <h5 class="filter-sub-titel">Fiyat Aralığı</h5>
+                <div class="categori-checkbox">
+                    <ul>
+                        <li><input type="checkbox" value="1000-1999" id="product_price_one" name="productPrice"><a href="#">1.000-1.999 TL</a></li>
+                        <li><input type="checkbox" value="2000-2999" id="product_price_two" name="productPrice"><a href="#">2.000-2.999 TL</a></li>
+                        <li><input type="checkbox" value="3000-3999" id="product_price_three" name="productPrice"><a href="#">3.000-3.999 TL</a></li>
+                        <li><input type="checkbox" value="4000-4999" id="product_price_four" name="productPrice"><a href="#">4.000-4.999 TL</a></li>
+                        <li><input type="checkbox" value="5000-5999" id="product_price_five" name="productPrice"><a href="#">5.000-5.999 TL</a></li>
+                        <li><input type="checkbox" value="6000-6999" id="product_price_six" name="productPrice"><a href="#">6.000-6.999 TL</a></li>
+                        <li><input type="checkbox" value="7000-7999" id="product_price_seven" name="productPrice"><a href="#">7.000-7.999 TL</a></li>
+                        <li><input type="checkbox" value="8000-8999" id="product_price_eight" name="productPrice"><a href="#">8.000-8.999 TL</a></li>
+                        <li><input type="checkbox" value="9000-9999" id="product_price_nine" name="productPrice"><a href="#">9.000-9.999 TL</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--sidebar-categores-box end  -->
+    </form>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Sayfa yüklendiğinde checkbox durumlarını geri yükle
+        restoreCheckboxState('product_name_one');
+        restoreCheckboxState('product_name_two');
+        restoreCheckboxState('product_name_three');
+        restoreCheckboxState('product_name_four');
+        restoreCheckboxState('product_name_five');
+        restoreCheckboxState('product_name_six');
+
+
+        restoreCheckboxState('product_model_one');
+        restoreCheckboxState('product_model_two');
+
+        restoreCheckboxState('product_storage_one');
+        restoreCheckboxState('product_storage_two');
+        restoreCheckboxState('product_storage_three');
+        restoreCheckboxState('product_storage_four');
+        restoreCheckboxState('product_storage_five');
+
+
+        restoreCheckboxState('product_price_one');
+        restoreCheckboxState('product_price_two');
+        restoreCheckboxState('product_price_three');
+        restoreCheckboxState('product_price_four');
+        restoreCheckboxState('product_price_five');
+        restoreCheckboxState('product_price_six');
+        restoreCheckboxState('product_price_seven');
+        restoreCheckboxState('product_price_eight');
+        restoreCheckboxState('product_price_nine');
+
+
+
+
+        // diğer checkbox'lar için aynı işlemi tekrar edin
+
+        // Tüm checkbox'ların değişiklik olayını dinle
+        document.querySelectorAll('input[type="checkbox"]').forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                saveCheckboxState(this.id, this.checked); // Checkbox durumunu kaydet
+                document.getElementById('myForm').submit(); // Formu gönder
+            });
+
+            restoreCheckboxState(checkbox.id); // Sayfa yüklendiğinde checkbox durumlarını geri yükle
+        });
+
+    });
+
+    function saveCheckboxState(id, isChecked) {
+        if (isChecked) {
+            sessionStorage.setItem(id, 'checked'); // Checkbox işaretliyse sessionStorage'a kaydet
+        } else {
+            sessionStorage.removeItem(id); // Checkbox işaretli değilse sessionStorage'dan kaldır
+        }
+    }
+
+    function restoreCheckboxState(id) {
+        var isChecked = sessionStorage.getItem(id);
+        var checkbox = document.getElementById(id);
+        if (checkbox) {
+            checkbox.checked = isChecked === 'checked';
+        }
+    }
+</script>

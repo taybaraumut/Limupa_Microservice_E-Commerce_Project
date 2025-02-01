@@ -1,0 +1,13 @@
+﻿@using Limupa.DtoLayer.BasketDtos
+@model BasketTotalDto
+
+<tfoot>
+    <tr class="cart-subtotal">
+        <th>Sepet Toplam Fiyatı</th>
+        <td><span class="amount">@Model.TotalPrice ₺</span></td>
+    </tr>
+    <tr class="order-total">
+        <th>Sipariş Toplam Fiyatı</th>
+        <td><strong><span class="amount">@Model.TotalPrice ₺</span></strong></td>
+    </tr>
+</tfoot>

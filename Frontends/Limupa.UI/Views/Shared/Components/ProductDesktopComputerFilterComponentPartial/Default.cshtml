@@ -1,0 +1,154 @@
+﻿
+<div class="col-lg-3 order-2 order-lg-1">
+    <form id="myForm" asp-controller="ProductDesktopComputerList" asp-action="Index" method="get">
+        <!--sidebar-categores-box start  -->
+        <div class="sidebar-categores-box">
+            <div class="sidebar-title t-center">
+                <h2>Filtrele</h2>
+            </div>
+            <!-- btn-clear-all start -->
+            @* <button class="btn-clear-all mb-sm-30 mb-xs-30">Clear all</button> *@
+            <!-- btn-clear-all end -->
+            <!-- filter-sub-area start -->
+            <div class="filter-sub-area">
+                <h5 class="filter-sub-titel">Markalar</h5>
+                <div class="categori-checkbox">
+                    <ul>
+                        <li><input type="checkbox" value="exper" id="product_name_one" name="productName"><a href="#">Exper (13)</a></li>
+                        <li><input type="checkbox" value="casper" id="product_name_two" name="productName"><a href="#">Casper (11)</a></li>
+                        <li><input type="checkbox" value="lenovo" id="product_name_three" name="productName"><a href="#">Lenovo (11)</a></li>
+                        <li><input type="checkbox" value="msi" id="product_name_four" name="productName"><a href="#">MSİ (11)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="filter-sub-area">
+                <h5 class="filter-sub-titel">İşlemci Modelleri</h5>
+                <div class="categori-checkbox">
+                    <ul>
+                        <li><input type="checkbox" value="core i5" id="product_process_model_one" name="productProcessModel"><a href="#">İntel Core i5</a></li>
+                        <li><input type="checkbox" value="core i7" id="product_process_model_two" name="productProcessModel"><a href="#">İntel Core i7</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="filter-sub-area">
+                <h5 class="filter-sub-titel">Fiyat Aralığı</h5>
+                <div class="categori-checkbox">
+                    <ul>
+                        <li><input type="checkbox" value="10000-14999" id="product_price_one" name="productPrice"><a href="#">10.000-14.999 TL</a></li>
+                        <li><input type="checkbox" value="15000-19999" id="product_price_two" name="productPrice"><a href="#">15.000-19.999 TL</a></li>
+                        <li><input type="checkbox" value="20000-29999" id="product_price_three" name="productPrice"><a href="#">20.000-29.999 TL</a></li>
+                        <li><input type="checkbox" value="30000-39999" id="product_price_four" name="productPrice"><a href="#">30.000-39.999 TL</a></li>
+                        <li><input type="checkbox" value="40000-49999" id="product_price_five" name="productPrice"><a href="#">40.000-49.999 TL</a></li>
+                        <li><input type="checkbox" value="50000-59999" id="product_price_six" name="productPrice"><a href="#">50.000-59.999 TL</a></li>
+                        <li><input type="checkbox" value="60000-69999 " id="product_price_nine" name="productPrice"><a href="#">60.000-69.999 TL</a></li>
+                        <li><input type="checkbox" value="70000-79999" id="product_price_ten" name="productPrice"><a href="#">70.000-79.999 TL</a></li>
+                        <li><input type="checkbox" value="80000-89999" id="product_price_eleven" name="productPrice"><a href="#">80.000-89.999 TL</a></li>
+                        <li><input type="checkbox" value="90000-99999" id="product_price_elf" name="productPrice"><a href="#">90.000-99.999 TL</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- filter-sub-area end -->
+            <div class="filter-sub-area pt-sm-10 pt-xs-10">
+                <h5 class="filter-sub-titel">Ekran Kartı Modelleri</h5>
+                <div class="categori-checkbox">
+                    <ul>
+                        <li><input type="checkbox" value="rtx 4070" id="product_graphic_card_model_one" name="productGraphicCardModel" /><a href="#">Nvidia RTX 4070 (10)</a></li>
+                        <li><input type="checkbox" value="rtx 4060ti" id="product_graphic_card_model_two" name="productGraphicCardModel"><a href="#">Nvidia RTX 4060Tİ (10)</a></li>
+                        <li><input type="checkbox" value="rtx 4060" id="product_graphic_card_model_three" name="productGraphicCardModel"><a href="#">Nvidia RTX 4060 (10)</a></li>
+                        <li><input type="checkbox" value="rtx 3060" id="product_graphic_card_model_four" name="productGraphicCardModel"><a href="#">Nvidia RTX 3060 (10)</a></li>
+                        <li><input type="checkbox" value="rtx 3050" id="product_graphic_card_model_five" name="productGraphicCardModel"><a href="#">Nvidia RTX 3050 (10)</a></li>
+                        <li><input type="checkbox" value="arc a750" id="product_graphic_card_model_six" name="productGraphicCardModel"><a href="#">İntel Arc A750 (10)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- filter-sub-area end -->
+            <div class="filter-sub-area pt-sm-10 pt-xs-10">
+                <h5 class="filter-sub-titel">Ram Sistem Belleği</h5>
+                <div class="categori-checkbox">
+                    <ul>
+                        <li><input type="checkbox" value="ram 16 gb" id="product_ram_one" name="productMemoryRam"><a href="#">16GB (10)</a></li>
+                        <li><input type="checkbox" value="ram 32 gb" id="product_ram_two" name="productMemoryRam"><a href="#">32GB (10)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--sidebar-categores-box end  -->
+    </form>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Sayfa yüklendiğinde checkbox durumlarını geri yükle
+        restoreCheckboxState('product_name_one');
+        restoreCheckboxState('product_name_two');
+        restoreCheckboxState('product_name_three');
+        restoreCheckboxState('product_name_four');
+
+
+        restoreCheckboxState('product_process_model_one');
+        restoreCheckboxState('product_process_model_two');
+
+        restoreCheckboxState('product_graphic_card_model_one');
+        restoreCheckboxState('product_graphic_card_model_two');
+        restoreCheckboxState('product_graphic_card_model_three');
+        restoreCheckboxState('product_graphic_card_model_four');
+
+
+
+        restoreCheckboxState('product_price_one');
+        restoreCheckboxState('product_price_two');
+        restoreCheckboxState('product_price_three');
+        restoreCheckboxState('product_price_four');
+        restoreCheckboxState('product_price_five');
+        restoreCheckboxState('product_price_six');
+        restoreCheckboxState('product_price_seven');
+        restoreCheckboxState('product_price_eight');
+        restoreCheckboxState('product_price_nine');
+        restoreCheckboxState('product_price_ten');
+        restoreCheckboxState('product_price_eleven');
+        restoreCheckboxState('product_price_elf');
+
+
+        restoreCheckboxState('product_ram_one');
+        restoreCheckboxState('product_ram_two');
+
+
+
+        // diğer checkbox'lar için aynı işlemi tekrar edin
+
+        // Tüm checkbox'ların değişiklik olayını dinle
+        document.querySelectorAll('input[type="checkbox"]').forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                saveCheckboxState(this.id, this.checked); // Checkbox durumunu kaydet
+                document.getElementById('myForm').submit(); // Formu gönder
+            });
+
+            restoreCheckboxState(checkbox.id); // Sayfa yüklendiğinde checkbox durumlarını geri yükle
+        });
+
+    });
+
+    function saveCheckboxState(id, isChecked) {
+        if (isChecked) {
+            sessionStorage.setItem(id, 'checked'); // Checkbox işaretliyse sessionStorage'a kaydet
+        } else {
+            sessionStorage.removeItem(id); // Checkbox işaretli değilse sessionStorage'dan kaldır
+        }
+    }
+
+    function restoreCheckboxState(id) {
+        var isChecked = sessionStorage.getItem(id);
+        var checkbox = document.getElementById(id);
+        if (checkbox) {
+            checkbox.checked = isChecked === 'checked';
+        }
+    }
+</script>

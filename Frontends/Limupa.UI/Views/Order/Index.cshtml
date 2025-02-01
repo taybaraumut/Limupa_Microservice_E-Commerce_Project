@@ -1,0 +1,115 @@
+﻿@using Limupa.DtoLayer.OrderDtos.OrderAddressDtos
+@model CreateOrderAddressDto
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["data"] != "")
+{
+    <div class="body-wrapper">
+        <div class="checkout-area pt-60 pb-30">
+            <div class="container">
+                <form method="post">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="checkbox-form">
+                                <h3>Sipariş Teslimat Ve Fatura Adresiniz</h3>
+                                <div class="row">
+
+                                    <input asp-for="UserID" value="@TempData["data"]" type="hidden">
+
+                                    <div class="col-md-12">
+                                        <div class="country-select clearfix">
+                                            <label>Ülke<span class="required">*</span></label>
+                                            <select class="nice-select wide" asp-for="Country">
+                                                <option data-display="Türkiye">Türkiye</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>İl<span class="required">*</span></label>
+                                            <input asp-for="City" placeholder="İlçe İsmini Bu Alana Giriniz" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>İlçe<span class="required">*</span></label>
+                                            <input type="text" asp-for="District" placeholder="Şehir İsmini Bu Alana Giriniz">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Adınız<span class="required">*</span></label>
+                                            <input asp-for="Name" placeholder="Adınızı Bu Alana Giriniz" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Soyadınız<span class="required">*</span></label>
+                                            <input asp-for="Surname" placeholder="Soyadınızı Bu Alana Giriniz" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Email Adresiniz<span class="required">*</span></label>
+                                            <input asp-for="Email" placeholder="Email Adresinizi Bu Alana Giriniz" type="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="checkout-form-list">
+                                            <label>Telefon Numaranız<span class="required">*</span></label>
+                                            <input asp-for="Phone" type="text" placeholder="Telefon Numaranızı Bu Alana Giriniz">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>Adres 1<span class="required">*</span></label>
+                                            <input asp-for="DetailOne" placeholder="1 nci Adresinizi Bu Alana Giriniz" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>Adres 2<span class="required">*</span></label>
+                                            <input asp-for="DetailTwo" placeholder="2 nci Adresinizi Bu Alana Giriniz" type="text">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>Posta Kodu <span class="required">*</span></label>
+                                            <input asp-for="ZipCode" placeholder="Posta Kodunu Bu Alana Giriniz" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6 col-12">
+
+                            <div class="your-order">
+
+                                @await Component.InvokeAsync("OrderSummaryComponentPartial")
+
+                                <div class="payment-method">
+                                    <div class="payment-accordion">
+                                        <div class="order-button-payment">
+                                            <input value="Ödeme Adımına Geç" type="submit">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+

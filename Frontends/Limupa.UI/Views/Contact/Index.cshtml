@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="contact-main-page mt-60 mb-40 mb-md-40 mb-sm-40 mb-xs-40">  
+    <div class="container">
+        <div class="row">
+
+          @await Component.InvokeAsync("ContactİnformationComponentPartial")
+
+            <div class="col-lg-6 col-md-12 order-2 order-lg-1">
+                <div class="contact-form-content pt-sm-55 pt-xs-55">
+                    <h3 class="contact-page-title">Tell Us Your Message</h3>
+                    <div class="contact-form">
+
+                        @await Component.InvokeAsync("ContactFormComponentPartial")
+
+                    </div>
+                    <p class="form-messege"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

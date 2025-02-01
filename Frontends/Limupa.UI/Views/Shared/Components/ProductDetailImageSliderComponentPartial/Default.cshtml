@@ -1,0 +1,24 @@
+﻿@using Limupa.DtoLayer.ProductImageDtos
+@model GetByIdProductImageDto
+
+<div class="product-details-images slider-navigation-1">
+
+    @foreach (var item in Model.ProductBigImageUrl)
+    {
+        <div class="lg-image">
+            <a class="popup-img venobox vbox-item" href="images/product/large-size/1.jpg" data-gall="myGallery">
+                <img src="@item" alt="product image">
+            </a>
+        </div>
+    }
+    
+</div>
+
+<div class="product-details-thumbs slider-thumbs-1">
+
+    @foreach (var item in Model.ProductSmallImageUrl)
+    {
+        <div class="sm-image"><img src="@item" alt="product image thumb"></div>
+    }
+   
+</div>

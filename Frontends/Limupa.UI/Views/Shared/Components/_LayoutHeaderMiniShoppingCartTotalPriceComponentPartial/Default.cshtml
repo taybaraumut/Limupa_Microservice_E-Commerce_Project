@@ -1,0 +1,36 @@
+﻿@if (TempData["id_two"] != "")
+{
+    @using Limupa.DtoLayer.BasketDtos
+    @model BasketTotalDto
+
+    @if (Model != null || Model.TotalPrice != 0)
+    {
+        <p class="minicart-total">Toplam Fiyat: <span>@Model.TotalPrice ₺</span></p>
+        <div class="minicart-button">
+            <a asp-controller="ShoppingCart" asp-action="Index" class="li-button li-button-dark li-button-fullwidth li-button-sm">
+                <span>Sepete Git</span>
+            </a>
+            <a asp-controller="Order" asp-action="Index" class="li-button li-button-fullwidth li-button-sm">
+                <span>Siparişe Git</span>
+            </a>
+        </div>
+    }
+    else
+    {
+        <p class="minicart-total">Toplam Fiyat: <span>0 ₺</span></p>
+        <div class="minicart-button">
+            <a asp-controller="ShoppingCart" asp-action="Index" class="li-button li-button-dark li-button-fullwidth li-button-sm">
+                <span>Sepete Git</span>
+            </a>
+            <a asp-controller="Order" asp-action="Index" class="li-button li-button-fullwidth li-button-sm">
+                <span>Siparişe Git</span>
+            </a>
+        </div>
+    }
+}
+else
+{
+    <h1>Hello</h1>
+}
+
+

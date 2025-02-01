@@ -1,0 +1,29 @@
+﻿@model List<City>
+
+@{
+    ViewData["Title"] = "Home Page";
+    int count = 0;
+}
+
+<div class="table-responsive">
+    <table class="table mb-0" id="table">
+        <thead>
+            <tr>
+                <th>Numara</th>
+                <th>ID</th>
+                <th>Şehir Adı</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                count++;
+                <tr>
+                    <td>@count</td>
+                    <td>@Model[i].CityID</td>
+                    <td>@Model[i].CityName</td>
+                </tr>
+            }                        
+        </tbody>
+    </table>
+</div>

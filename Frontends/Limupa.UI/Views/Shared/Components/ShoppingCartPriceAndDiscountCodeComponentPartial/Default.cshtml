@@ -1,0 +1,9 @@
+﻿
+@{
+    var code = TempData["code"];
+    var discountRate = TempData["discountRate"];
+}
+
+@await Html.PartialAsync("~/Views/Discount/ConfirmDiscountCouponCode.cshtml")
+
+@await Component.InvokeAsync("ShoppingTotalCartPriceComponentPartial",new {code = code,discountRate=discountRate})

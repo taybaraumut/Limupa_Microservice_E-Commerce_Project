@@ -1,0 +1,154 @@
+﻿@using Limupa.DtoLayer.OrderDtos.OrderOrderingDtos
+@model List<ResultOrderingByUserIdDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Temel stillemeler */
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .container-plus {
+        display: flex;
+        max-width: 1200px;
+        margin:auto;
+        margin-bottom:40px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        line-height: 35px;
+        padding: 10px;
+        background-color: #293a6c;
+        color: #fff;
+        width: 200px;
+    }
+
+        .menu a {
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+            border-radius: 4px;
+        }
+
+            .menu a:hover {
+                color: #293a6c;
+                background-color: white;
+            }
+
+    .profile-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .page-content {
+        display: none;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+        .page-content.active {
+            display: block;
+        }
+
+    .user-info, .order-info, .shipment-info {
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-weight: bold;
+        color: #293a6c;
+    }
+
+    strong {
+        color: #555;
+    }
+</style>
+
+
+<div class="container-plus">
+    <div class="menu">
+        <a href="#" class="nav-link" data-target="userInfo">Hesap Bilgileriniz</a>
+        <a href="#" class="nav-link" data-target="userOrder">Sipariş Bilgileriniz</a>
+    </div>
+
+    <div class="profile-container">
+        <div class="page-content active" id="userInfo">
+            <div class="user-info">
+                <h2>Hesap Bilgileriniz</h2>
+                <p><strong>Adı Soyadı:</strong>@TempData["name"] - @TempData["surname"]</p>
+                <p><strong>Email:</strong> @TempData["email"]</p>
+                <p><strong>Kullanıcı Adı:</strong> @TempData["email"]</p>
+            </div>
+        </div>
+
+        <div class="page-content" id="userOrder">
+            <div class="user-info">
+                <h2>Sipariş Bilgileriniz</h2>
+                <div class="your-order-table table-responsive">
+                    <table class="table mt-10">
+                        <thead>
+                            <tr>
+                                <th class="cart-product-name">Sipariş Fiyatı</th>
+                                <th class="cart-product-total">Sipariş Tarihi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr class="cart_item">
+                                    <td class="cart-product-name">@item.TotalPrice</td>
+                                    <td class="cart-product-total"><span class="amount">@item.OrderDate</span></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-content" id="userCargo">
+            <div class="order-info">
+                <h2>Kargo Bilgileriniz</h2>
+                <p><strong>Sipariş Numarası:</strong> ORD12345</p>
+                <p><strong>Sipariş Tarihi:</strong> 2024-06-30</p>
+                <p><strong>Toplam Tutar:</strong> 250 TL</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const menuItems = document.querySelectorAll('.menu a');
+    const pageContents = document.querySelectorAll('.page-content');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Tüm içerikleri gizle
+            pageContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Tıklanan menü öğesine ait içeriği göster
+            const target = this.getAttribute('data-target');
+            const targetContent = document.getElementById(target);
+            targetContent.classList.add('active');
+        });
+    });
+</script>

@@ -1,0 +1,56 @@
+﻿@using Limupa.DtoLayer.CategoryDtos
+@model List<ResultCategoryDto>
+
+<div class="header-middle pl-sm-0 pr-sm-0 pl-xs-0 pr-xs-0">
+    <div class="container">
+        <div class="row">
+            <!-- Begin Header Logo Area -->
+            <div class="col-lg-3">
+                <div class="logo pb-sm-30 pb-xs-30">
+                    <a href="index.html">
+                        <img src="~/Limupa/images/menu/logo/2.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- Header Logo Area End Here -->
+            <!-- Begin Header Middle Right Area -->
+            <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
+                <!-- Begin Header Middle Searchbox Area -->
+                <form method="get" class="hm-searchbox" asp-controller="ProductSearch" asp-action="Index">
+
+                    <select class="nice-select select-search-category" name="productCategory">
+
+                        <option name="productCategory" value="All">Hepsi</option>
+
+                        @foreach (var item in Model)
+                        {
+                            <option value="@item.CategoryID" name="productCategory">@item.CategoryName</option>
+                        }                                            
+                    </select>
+
+                    <input type="text" name="productTextSearch" placeholder="Arayacağınız Kelimeyi Buraya Yazınız..." required>
+                    <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <!-- Header Middle Searchbox Area End Here -->
+                <!-- Begin Header Middle Right Area -->
+                <div class="header-middle-right">
+                    <ul class="hm-menu">
+                        <!-- Begin Header Middle Wishlist Area -->
+                        <li class="hm-wishlist">
+                            <a href="wishlist.html">
+                                <span class="cart-item-count wishlist-item-count">0</span>
+                                <i class="fa fa-heart-o"></i>
+                            </a>
+                        </li>
+                        <!-- Header Middle Wishlist Area End Here -->
+                        <!-- Begin Header Mini Cart Area -->
+                        @await Component.InvokeAsync("_LayoutHeaderMiniShoppingCartComponentPartial")
+                        <!-- Header Mini Cart Area End Here -->
+                    </ul>
+                </div>
+                <!-- Header Middle Right Area End Here -->
+            </div>
+            <!-- Header Middle Right Area End Here -->
+        </div>
+    </div>
+</div>

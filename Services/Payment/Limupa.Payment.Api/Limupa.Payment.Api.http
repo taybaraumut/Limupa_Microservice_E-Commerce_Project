@@ -1,0 +1,6 @@
+@Limupa.Payment.Api_HostAddress = http://localhost:5093
+
+GET {{Limupa.Payment.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

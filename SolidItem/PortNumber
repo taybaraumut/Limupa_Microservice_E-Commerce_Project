@@ -1,0 +1,8 @@
+IdentityServer Port Number -----> http://localhost:5001
+Catalog Port Number --------> http://localhost:5294
+Discount Port Number --------> http://localhost:5262
+Order Port Number --------> http://localhost:5065
+Cargo Port Number --------> http://localhost:5094
+Basket Port Number --------> http://localhost:5215
+Comment Port Number --------> http://localhost:5273
+Payment Port Number --------> http://localhost:5093

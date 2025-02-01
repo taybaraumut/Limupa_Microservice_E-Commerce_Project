@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .coupon-card {
+        background-color: #293a6c;
+        color: #fff;
+        text-align: center;
+        padding: 40px 80px;
+        border-radius: 15px;
+        box-shadow: 0 10px 10px 0 rgba(0,0,0,0.15);
+        position: relative;
+    }
+
+    .logo {
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .coupon-card h3 {
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 40px;
+    }
+
+    .coupon-card p {
+        font-size: 15px;
+    }
+
+    .coupon-row {
+        display: flex;
+        align-items: center;
+        margin: 25px auto;
+        width: fit-content;
+    }
+
+    #cpnCode {
+        border: 1px dashed #fff;
+        padding: 10px 20px;
+        border-right: 0;
+    }
+
+    #cpnBtn {
+        border: 1px solid #fff;
+        background: #fff;
+        padding: 10px 20px;
+        color: #7158fe;
+        cursor: pointer;
+    }
+
+    .circle1, .circle2 {
+        background: #f0fff3;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .circle1 {
+        left: -25px;
+    }
+
+    .circle2 {
+        right: -25px;
+    }
+</style>
+
+<div class="content-wraper">
+    <div class="container">
+        <div class="row single-product-area">
+            <div class="col-lg-5 col-md-6">
+                <!-- Product Details Left -->
+                <div class="product-details-left">
+                    @await Component.InvokeAsync("ProductDetailImageSliderComponentPartial",new {id=ViewBag.x})
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-6">
+                <div class="product-details-view-content pt-60">
+                    @await Component.InvokeAsync("ProductDetailFeatureComponentPartial",new {id=ViewBag.x})
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="product-area pt-35">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="li-product-tab">
+                    <ul class="nav li-product-menu">
+                        <li><a class="active" data-toggle="tab" href="#description"><span>Description</span></a></li>
+                        <li><a data-toggle="tab" href="#product-details"><span>Cupon Code</span></a></li>
+                        <li><a data-toggle="tab" href="#reviews"><span>Reviews</span></a></li>
+                    </ul>
+                </div>
+                <!-- Begin Li's Tab Menu Content Area -->
+            </div>
+        </div>
+        <div class="tab-content">
+            <div id="description" class="tab-pane active show" role="tabpanel">
+                @await Component.InvokeAsync("ProductDetailDescriptionComponentPartial", new { id = ViewBag.x })
+            </div>
+            <div id="product-details" class="tab-pane" role="tabpanel">
+                @await Component.InvokeAsync("ProductDetailCouponCodeComponentPartial")
+            </div>
+            <div id="reviews" class="tab-pane" role="tabpanel">
+                @await Component.InvokeAsync("ProductDetailCommentComponentPartial", new { id = ViewBag.x })
+            </div>
+        </div>
+    </div>
+</div>
+
+@await Component.InvokeAsync("ProductDetailProductListComponentPartial")
+
+
+<script>
+    var cpnBtn = document.getElementById("cpnBtn");
+    var cpnCode = document.getElementById("cpnCode");
+
+    cpnBtn.onclick = function () {
+        navigator.clipboard.writeText(cpnCode.innerHTML);
+        cpnBtn.innerHTML = "COPIED";
+        setTimeout(function () {
+            cpnBtn.innerHTML = "COPY CODE";
+        }, 3000);
+    }
+</script>

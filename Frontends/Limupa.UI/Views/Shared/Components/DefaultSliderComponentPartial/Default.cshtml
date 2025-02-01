@@ -1,0 +1,34 @@
+﻿@using Limupa.DtoLayer.FeatureSliderDtos
+@model List<ResultFeatureSliderDto>
+
+<div class="col-lg-8 col-md-8">
+    <div class="slider-area pt-sm-30 pt-xs-30">
+        <div class="slider-active owl-carousel">
+            <!-- Begin Single Slide Area -->
+            <!-- Single Slide Area End Here -->
+            <!-- Begin Single Slide Area -->
+            <!-- Single Slide Area End Here -->
+            <!-- Begin Single Slide Area -->
+
+            @foreach (var item in Model)
+            {
+                <div class="single-slide align-center-left animation-style-01">
+
+                    <img src="~/Limupa/@item.FeatureSliderImageUrl">
+
+                    <div class="slider-progress"></div>
+                    <div class="slider-content">
+                        <h2 class="text-white">@item.FeatureSliderTitle</h2>
+                        <div class="default-btn slide-btn">
+                            <a class="links" href="shop-left-sidebar.html">Alışverişe Başla</a>
+                        </div>
+                    </div>
+                </div>
+
+            }
+          
+            <!-- Single Slide Area End Here -->
+        </div>
+    </div>
+</div>
+

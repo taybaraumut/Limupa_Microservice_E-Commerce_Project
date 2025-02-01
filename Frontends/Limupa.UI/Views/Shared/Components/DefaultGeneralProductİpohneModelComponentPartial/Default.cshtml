@@ -1,0 +1,35 @@
+﻿@model List<ResultProductİpohnePhoneModelDto>
+
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="group-featured-pro-wrapper">
+            <div class="product-img">
+                <a href="product-details.html">
+                    <img alt="" src="@item.ProductImageUrl">
+                </a>
+            </div>
+            <div class="featured-pro-content">
+                <div class="product-review">
+                    <h5 class="manufacturer">
+                        <a href="product-details.html">@item.Category.CategoryName</a>
+                    </h5>
+                </div>
+                <div class="rating-box">
+                    <ul class="rating">
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li class="no-star"><i class="fa fa-star-o"></i></li>
+                        <li class="no-star"><i class="fa fa-star-o"></i></li>
+                    </ul>
+                </div>
+                <h4><a class="product_name" asp-controller="ProductDetail" asp-action="Index" asp-route-id="@item.ProductUrlSeo">@item.ProductName</a></h4>
+                <div class="featured-price-box">
+                    <span class="new-price">@item.ProductPrice ₺</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="slider-with-banner">
+    <div class="container">
+        <div class="row">
+            
+            @await Component.InvokeAsync("DefaultSliderComponentPartial")
+
+            <div class="col-lg-4 col-md-4 text-center pt-sm-30 pt-xs-30">
+
+               @await Component.InvokeAsync("DefaultBannerComponentPartial")
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@await Component.InvokeAsync("DefaultAdvertComponentPartial")
+
+@await Component.InvokeAsync("DefaultFilterProductComponentPartial")
+
+@await Component.InvokeAsync("DefaultAdvertBannerComponentPartial")
+
+@await Component.InvokeAsync("DefaultElectronicDeviceProductComponentPartial")
+
+@await Component.InvokeAsync("DefaultHomeAndEntertainmentProductComponentPartial")
+
+@await Component.InvokeAsync("DefaultAdvertProductComponentPartial")
+
+@await Component.InvokeAsync("DefaultGeneralProductComponentPartial")

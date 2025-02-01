@@ -1,0 +1,45 @@
+﻿@using Limupa.DtoLayer.CargoDtos.CargoCompanyDtos
+@model GetByIdCargoCompanyDto
+
+@{
+    ViewData["Title"] = "UpdateCargoCompany";
+    Layout = "~/Areas/Admin/Views/_AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div class="content">
+        <div class="page-header">
+            <div class="page-title">
+                <h4>Kargo Firması Güncelleme İşlemi</h4>
+                <h6>Kargo Firması Güncelleme İle İlgili İşlemleri Aşağıdan Gerçekleştirebilirsiniz</h6>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <form method="post">
+                        <input type="hidden" asp-for="CargoCompanyID" />
+
+                        <div class="col-lg-4 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>Kargo Firma Adı</label>
+                                <input type="text" asp-for="CargoCompanyName" />
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-12">
+                            <input type="submit" class="btn btn-submit me-2" value="Kaydet" />
+                            <input type="reset" class="btn btn-cancel me-2" value="Vazgeç" />
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

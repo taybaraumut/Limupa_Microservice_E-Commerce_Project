@@ -1,0 +1,149 @@
+﻿
+
+<div class="col-lg-3 order-2 order-lg-1 bg-light">
+    <!--sebar-categores-box start  -->
+    <form id="myForm" method="get" asp-action="Index" asp-controller="ProductBluetoothList">
+        <div class="sebar-categores-box">
+            <br />
+            <div class="sebar-title t-center">
+                <h2>Filtrele</h2>
+            </div>
+            <br />
+            <!-- btn-clear-all start -->
+            @* <button class="btn-clear-all mb-sm-30 mb-xs-30">Clear all</button> *@
+            <!-- btn-clear-all end -->
+            <!-- filter-sub-area start -->
+            @* asp-action="GetFilter" asp-controller="ProductBluetoothList" *@
+            <div class="filter-sub-area">
+                <br />
+                <h5 class="filter-sub-titel">Markalar</h5>
+                <br />
+                <div class="categori-checkbox">
+                    <ul>
+                        <li><input type="checkbox" value="anker" id="product_name_one" name="productName" /><a>Anker (13)</a></li>
+                        <li><input type="checkbox" value="apple" id="product_name_two" name="productName" /><a>Apple (12)</a></li>
+                        <li><input type="checkbox" value="asus" id="product_name_three" name="productName" /><a href="#">Asus (11)</a></li>
+                        <li><input type="checkbox" value="bang&olufsen" id="product_name_four" name="productName" /><a href="#">Bang & Olufsen (11)</a></li>
+                        <li><input type="checkbox" value="beats" id="product_name_five" name="productName" /><a href="#">Beats (11)</a></li>
+                        <li><input type="checkbox" value="huawei" id="product_name_six" name="productName" /><a href="#">Huawei (11)</a></li>
+                        <li><input type="checkbox" value="rampage" id="product_name_seven" name="productName" /><a href="#">Rampage (11)</a></li>
+                        <li><input type="checkbox" value="samsung" id="product_name_eight" name="productName" /><a href="#">Samsung (11)</a></li>
+                        <li><input type="checkbox" value="sony" id="product_name_nine" name="productName" /><a href="#">Sony (11)</a></li>
+                        <li><input type="checkbox" value="razer" id="product_name_ten" name="productName" /><a href="#">Razer (11)</a></li>
+                        <li><input type="checkbox" value="hp" id="product_name_eleven" name="productName" /><a href="#">HP (11)</a></li>
+                        <li><input type="checkbox" value="lenovo" id="product_name_elf" name="productName" /><a href="#">Lenovo (11)</a></li>
+                        <li><input type="checkbox" value="logitech" id="product_name_threeteen" name="productName" /><a href="#">Logitech (11)</a></li>
+                        <li><input type="checkbox" value="jbl" id="product_name_fourteen" name="productName" /><a href="#">JBL (11)</a></li>
+                        <li><input type="checkbox" value="philips" id="product_name_fiveteen" name="productName" /><a href="#">Philips (11)</a></li>
+                        <li><input type="checkbox" value="x-level" id="product_name_sixteen" name="productName" /><a href="#">X-Level (11)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- filter-sub-area end -->
+            <!-- filter-sub-area start -->
+            <div class="filter-sub-area pt-sm-10 pt-xs-10">
+                <br />
+                <h5 class="filter-sub-titel">Kulaklıklar</h5>
+                <br />
+                <div class="categori-checkbox">
+                    <ul>
+                        <li><input type="checkbox" value="bluetooth" id="product_model_one" name="productModel"><a href="#" />Bluetooth Kulaklık (13)</a></li>
+                        <li><input type="checkbox" value="headset" id="product_model_two" name="productModel"><a href="#" />HeadSet Kulaklık (12)</a></li>
+                        <li><input type="checkbox" value="mikrofon" id="product_model_three" name="productModel"><a href="#" />Mikrofon (11)</a></li>
+                        <li><input type="checkbox" value="oyun kulaklığı" id="product_model_four" name="productModel"><a href="#" />Oyun Kulaklığı (11)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="filter-sub-area">
+                <br />
+                <h5 class="filter-sub-titel">Fiyat Aralığı</h5>
+                <br />
+                <div class="categori-checkbox">
+                    <ul>
+                        <li><input type="checkbox" name="productPrice" value="1000-1999" id="product_price_one"><a>1.000-1.999 TL</a></li>
+                        <li><input type="checkbox" name="productPrice" value="5000-9999" id="product_price_two"><a>5.000-9.999 TL</a></li>
+                        <li><input type="checkbox" name="productPrice" value="10000-14999" id="product_price_three"><a/>10.000-14.999 TL</a></li>
+                        <li><input type="checkbox" name="productPrice" value="15000-19999" id="product_price_four"><a/>15.00-19.999 TL</a></li>
+                        <li><input type="checkbox" name="productPrice" value="20000-29999" id="product_price_five"><a/>20.000-29.999 TL</a></li>
+                        <li><input type="checkbox" name="productPrice" value="30000-39999" id="product_price_six"><a/>30.000-39.999 TL</a></li>
+                        <li><input type="checkbox" name="productPrice" value="40000-49999" id="product_price_seven"><a/>40.000-49.999 TL</a></li>
+                        <li><input type="checkbox" name="productPrice" value="50000-59999" id="product_price_eight"><a/>50.000-59.999 TL</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- filter-sub-area end -->
+        </div>
+    </form>
+    <!--sebar-categores-box end  -->
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Sayfa yüklendiğinde checkbox durumlarını geri yükle
+        restoreCheckboxState('product_name_one');
+        restoreCheckboxState('product_name_two');
+        restoreCheckboxState('product_name_three');
+        restoreCheckboxState('product_name_four');
+        restoreCheckboxState('product_name_five');
+        restoreCheckboxState('product_name_six');
+        restoreCheckboxState('product_name_seven');
+        restoreCheckboxState('product_name_eight');
+        restoreCheckboxState('product_name_nine');
+        restoreCheckboxState('product_name_ten');
+        restoreCheckboxState('product_name_eleven');
+        restoreCheckboxState('product_name_elf');
+        restoreCheckboxState('product_name_threeteen');
+        restoreCheckboxState('product_name_fourteen');
+        restoreCheckboxState('product_name_fiveteen');
+        restoreCheckboxState('product_name_sixteen');
+
+
+        restoreCheckboxState('product_model_one');
+        restoreCheckboxState('product_model_two');
+        restoreCheckboxState('product_model_three');
+        restoreCheckboxState('product_model_four');
+
+
+        restoreCheckboxState('product_price_one');
+        restoreCheckboxState('product_price_two');
+        restoreCheckboxState('product_price_three');
+        restoreCheckboxState('product_price_four');
+        restoreCheckboxState('product_price_five');
+        restoreCheckboxState('product_price_six');
+        restoreCheckboxState('product_price_seven');
+        restoreCheckboxState('product_price_eight');
+
+
+
+
+        // diğer checkbox'lar için aynı işlemi tekrar edin
+
+        // Tüm checkbox'ların değişiklik olayını dinle
+        document.querySelectorAll('input[type="checkbox"]').forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                saveCheckboxState(this.id, this.checked); // Checkbox durumunu kaydet
+                document.getElementById('myForm').submit(); // Formu gönder
+            });
+
+            restoreCheckboxState(checkbox.id); // Sayfa yüklendiğinde checkbox durumlarını geri yükle
+        });
+
+    });
+
+    function saveCheckboxState(id, isChecked) {
+        if (isChecked) {
+            sessionStorage.setItem(id, 'checked'); // Checkbox işaretliyse sessionStorage'a kaydet
+        } else {
+            sessionStorage.removeItem(id); // Checkbox işaretli değilse sessionStorage'dan kaldır
+        }
+    }
+
+    function restoreCheckboxState(id) {
+        var isChecked = sessionStorage.getItem(id);
+        var checkbox = document.getElementById(id);
+        if (checkbox) {
+            checkbox.checked = isChecked === 'checked';
+        }
+    }
+</script>

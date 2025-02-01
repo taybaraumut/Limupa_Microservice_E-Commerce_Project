@@ -1,0 +1,51 @@
+﻿@if (TempData["id_one"] != "")
+{
+    @using Limupa.DtoLayer.BasketDtos
+    @model List<BasketItemDto>
+
+
+    <li class="hm-minicart">
+        @await Component.InvokeAsync("_LayoutHeaderMiniShoppingCartTotalPriceTwoComponentPartial")
+        <span></span>
+        <div class="minicart">
+            <ul class="minicart-product-list">
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <li>
+                            <a href="single-product.html" class="minicart-product-image">
+                                <img src="@item.ProductImageUrl" alt="cart products">
+                            </a>
+                            <div class="minicart-product-details">
+                                <h6><a href="single-product.html">@item.ProductName</a></h6>
+                                <span>@item.Price ₺</span>
+                            </div>
+                            <a href="/ShoppingCart/RemoveBasketItem/@item.ProductUrlSeo" class="close">
+                                <i class="fa fa-close"></i>
+                            </a>
+                        </li>
+                    }
+                }
+                else
+                {
+                    <li>
+                        Sepetiniz boş.
+                    </li>
+                }
+            </ul>
+            @await Component.InvokeAsync("_LayoutHeaderMiniShoppingCartTotalPriceComponentPartial")
+        </div>
+    </li>
+}
+else
+{
+    <li class="hm-minicart">
+        @await Component.InvokeAsync("_LayoutHeaderMiniShoppingCartTotalPriceTwoComponentPartial")
+        <span></span>
+    </li>
+}
+
+
+
+

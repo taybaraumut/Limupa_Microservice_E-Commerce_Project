@@ -1,0 +1,86 @@
+﻿@model GetByIdProductDto
+
+@{
+    ViewData["Title"] = "CreateProductImage";
+    Layout = "~/Areas/Admin/Views/_AdminLayout/_AdminLayout.cshtml";
+}
+
+
+<div class="page-wrapper">
+    <div class="content">
+        <div class="page-header">
+            <div class="page-title">
+                <h4>Product Add</h4>
+                <h6>Create new product</h6>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="row">
+
+                        <input type="hidden" asp-for="ProductUrlSeo">
+                        <input type="hidden" asp-for="ProductID">
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label> Product Image</label>
+                                <div class="image-upload">
+                                    <input multiple type="file" name="BigPhoto">
+                                    <div class="image-uploads">
+                                        <img src="~/inventory-management-admin-dashboard-template-main/assets/img/icons/upload.svg" alt="img">
+                                        <h4>Drag and drop a file to upload</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label> Product Image</label>
+                                <div class="image-upload">
+                                    <input multiple type="file" name="SmallPhoto">
+                                    <div class="image-uploads">
+                                        <img src="~/inventory-management-admin-dashboard-template-main/assets/img/icons/upload.svg" alt="img">
+                                        <h4>Drag and drop a file to upload</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="BigSavedFileName" value="Value" />
+                        <input type="hidden" name="SmallSavedFileName" value="Value" />
+
+                        <input type="hidden" name="BigSavedUrl" value="Value" />
+                        <input type="hidden" name="SmallSavedUrl" value="Value" />
+                        <input type="hidden" name="ProductBigImageUrl" value="string" />
+                        <input type="hidden" name="ProductSmallImageUrl" value="string" />
+
+
+
+
+                        @* <div class="col-lg-12">
+                        <div class="form-group">
+                        <label> Product Image</label>
+                        <div class="image-upload">
+                        <input type="file">
+                        <div class="image-uploads">
+                        <img src="assets/img/icons/upload.svg" alt="img">
+                        <h4>Drag and drop a file to upload</h4>
+                        </div>
+                        </div>
+                        </div>
+                        </div> *@
+                        <div class="col-lg-12">
+                            <input type="submit" class="btn btn-submit me-2" value="Kaydet" />
+                            <input type="reset" class="btn btn-cancel me-2" value="Vazgeç" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
